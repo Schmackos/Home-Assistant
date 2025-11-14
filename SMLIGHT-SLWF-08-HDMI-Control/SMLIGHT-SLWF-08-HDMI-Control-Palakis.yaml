@@ -1,3 +1,6 @@
+#https://github.com/smlight-tech/slwf-08/blob/main/esphome-configs/slwf-08-Palakis.yaml
+#https://github.com/Palakis/esphome-native-hdmi-cec
+
 substitutions:
   name: "hdmi-control-palakis"
   friendly_name: "HDMI Control - palakis"
@@ -28,11 +31,11 @@ wifi:
     ssid: "HDMI-AP"
     password: !secret esphome_ota_password
 
-mqtt:
-  broker: '192.168.178.6' # insert IP or DNS of your own MQTT broker (e.g. the IP of your HA server)
-  username: !secret mqtt_user # make sure your MQTT username is added to the secrets file in the ESPHome Add-on
-  password: !secret mqtt_password # make sure your MQTT password is added to the secrets file in the ESPHome Add-on
-  discovery: true # if you only want your own MQTT topics
+# mqtt:
+#  broker: '192.168.178.6' # insert IP or DNS of your own MQTT broker (e.g. the IP of your HA server)
+#  username: !secret mqtt_user # make sure your MQTT username is added to the secrets file in the ESPHome Add-on
+#  password: !secret mqtt_password # make sure your MQTT password is added to the secrets file in the ESPHome Add-on
+#  discovery: true # if you only want your own MQTT topics
 
 captive_portal:
 
@@ -110,11 +113,11 @@ hdmi_cec:
               translated: !lambda 'return hdmi_cec::Frame(source, destination, data).to_string();'  # Human-readable form (e.g. "TV → Broadcast: Standby")
 
     # Send CEC messages via MQTT in CEC-O-Matic format
-    - then:
-        - mqtt.publish:
-            topic: cec_messages
-            payload: !lambda |-
-              return hdmi_cec::Frame(source, destination, data).to_string(true);
+ #  - then:
+ #      - mqtt.publish:
+ #          topic: cec_messages
+ #           payload: !lambda |-
+ #             return hdmi_cec::Frame(source, destination, data).to_string(true);
 
     # Publish decoded CEC messages as text sensors (raw and translated)
     - then:
