@@ -66,8 +66,8 @@ external_components:
 #  - source: github://johnboiles/esphome-hdmi-cec
   - source: github://Palakis/esphome-hdmi-cec
 
-#dashboard_import:
-#  package_import_url: github://smlight-tech/slwf-08/esphome-configs/slwf-08-Palakis.yaml
+dashboard_import:
+  package_import_url: github://Schmackos/Home-Assistant/blob/main/SMLIGHT-SLWF-08-HDMI-Control/SMLIGHT-SLWF-08-HDMI-Control-Palakis.yaml
 
 hdmi_cec:
   # Pick a GPIO pin that can do both input AND output
