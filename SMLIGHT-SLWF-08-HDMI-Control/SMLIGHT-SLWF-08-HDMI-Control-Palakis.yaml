@@ -21,7 +21,7 @@ wifi:
   fast_connect: True
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   #manual_ip:
-  #  static_ip: 192.168.178.67
+  #  static_ip: 192.168.178.69
   #  gateway: 192.168.178.1
   #  subnet: 255.255.255.0
   ap:
