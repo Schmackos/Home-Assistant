@@ -162,9 +162,3 @@ button:
       - hdmi_cec.send:
           destination: 0xF # Broadcast
           data: [0x41] # "Volume up" opcode
-  - platform: template
-    name: "Test 1"
-    on_press:
-      - hdmi_cec.send:
-          destination: 0xF # Broadcast
-          data: [0x41] # "Volume up" opcode   
